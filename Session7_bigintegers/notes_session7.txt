@@ -1,0 +1,61 @@
+Big Integers
+
+we have data types to store ( like int , long), having a limited space (INT_MAX), the largest number u can form.
+to store big integers (2^64-1 +( long long int)) 
+one option-
+ARRAY < stroing number digit by digit>
+STRING < using str type for it >
+but how to add?
+eg- 33333333331111111111111111111 + 444444442222221111111 = 333333377777777777111111111112222222( not exact)
+
+Big Integer algorithm-
+<numbers may not fit in long long int 
+<pen and paper>
+n1=938 n2=65
+  1 1      <carry
+  9 3 8     <no1
+  + 6 5     <no2
+  -----
+1 0 0 3     <result
+
+arr loc >  0  1  2
+        1  0  0  3
+        ^
+        1 cant go as there is no -1 space
+
+but you cannot expand in array... thus we do it in left to right fashion
+we reverse the numbers and then do addition    011 <carry
+                                            -> 56+ 
+                                               839 
+                                            -> 3001 -> 1003
+cases->
+1 -> n1 finishes
+2-> n2 finishes
+3-> only carry
+
+Assume 2nd number is largest ...
+<swap if not>
+- just to do things easy-
+
+<<SOMETHING NEW>>
+char DigitToChar(int x){
+    return x +'0';
+}
+
+int charToDigit(char ch){
+    return ch - '0';
+}
+
+###Ref bigaddition.cpp FOR CODE<only recursion###  
+
+LARGE FACTORIAL>>>
+producting factorial of a very big number 
+eg- 100 ans- 93326215441552-------------- so on
+<we need to look for multiplcation in str>
+Multiply array with number(smaller one)
+by- multiply(array, int)
+
+    for(i=1;i<=N;i++)
+
+###Ref largefact.cpp FOR CODE###  
+rest are from JAVA and PYTHON , jusr revise from coruse if needed

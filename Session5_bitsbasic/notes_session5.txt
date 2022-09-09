@@ -1,0 +1,102 @@
+bitwise operators=
+binary and - &
+    & | 1  0
+    1 | 1  0
+    0 | 0  0
+ 5&7- 101 & 111 = 101 => 5
+
+binary OR - |
+    | | 1  0
+    1 | 1  1
+    0 | 1  0
+ 5|8- 0101 & 1000 = 1101 => 13
+
+binary XOR - ^ <exclusive or>
+    ^ | 1  0
+    1 | 0  1
+    0 | 1  0
+ 5^7- 101 & 111 = 010 => 2
+
+binary NOT - ~
+    ~ | 
+    1 | 0 
+    0 | 1 
+ ~5- ~0101 = 111010
+
+ int a=0;  // its 0000000000000 x32 times
+ cout<<~a;  // 1 (-ve sign) \ 111111111111 x31  for magintude invert<2's compliment> & add 1 thus -1 answer (1000000000<x31>00001)
+ answer- -1
+Binary Left Shift - <<
+ 5<<2 - 0101<toward left by factor of 2> 
+
+            <---
+            0000101 <let this number be X >
+            x2
+            0010100
+            -------
+            = 2^2(X)
+
+        a<<b= ax2^b
+        5<<2=5x4=20
+
+Binary right Shift - >>
+ 10>>1 - 1010<toward left by factor of 2> 
+
+            --->
+            0001010 <let this number be X >
+        
+            0000101
+            -------
+            = (X)/2^2
+
+        a>>b= a/2^b
+        10>>4=10/2^4=0
+
+OOD/EVEN with bitwise operators
+
+ . all bit representation of numbers
+   for all odd last bit 1
+   and for all even number last bit 0
+
+   00011->3 00100->4
+
+   just check for last bit
+   NUMBER & 0000001 ->answer
+   ###ref oddeven.cpp###
+
+ BIT MANIPULATION
+
+ write function to- 
+ get ith bit 
+ change ith bit 
+ clear ith bit
+ update the ith bit
+ clear last I bits 
+ ###REF bitmanupulation.cpp FOR all###
+ eg - no.=5 -> 000101
+ 1 at end is 0th bit
+replace bits
+
+Q)you are given two 32 bit numbers ,N and M, and two bit positions i and j.
+    Write s method to set all bits between i and j in N equal to M.
+    M(becomes a substring of N locationed at and starting at j)
+
+    example -
+    n=1000000000;
+    m=10101;
+    i=2
+    j=6
+    output:1001010100
+
+    ####ref replace.cpp###
+
+Q) to check number is power of two using bitwise manupulation.
+    ###ref powerof2.cpp###
+
+>>> counting number of set bits
+9->1001 (2 set bits/[1])
+   ^  ^
+   ###REF countsetbit.cpp ###
+
+converting decimal to binary 
+###REF dec_to_bin.cpp ###

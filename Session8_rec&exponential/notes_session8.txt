@@ -1,0 +1,86 @@
+Exponentiation
+
+what-?
+a^6
+but it will hav compilexity of o(n), if done by froo loop
+
+we do ,
+binary Exponentiation>>>
+
+2^10=2^8 2^2
+2^10   10=8+2(in binary places)  (1010)
+a   b(binary)   res
+2    1010        1
+2^2  0101        2^2
+2^4  0010        2^2
+2^8  0001        2^2.2^8
+2^16 0000                   2^10
+
+3210< index
+1010< binary
+8421< 2^row
+
+res=res x 2^8 x2^2=2^10
+
+1110
+2^14 2^8 2^4 2^2 ( see the bits in sinary)
+
+1> check if last bit of b is set...multiply a in resultant
+2> right shift b
+3> a=a^2
+
+Modular Exponentiation>>>
+
+binary expo under mod condition
+
+(%)
+if answers are hugh , then give me answer with modular of prime numbers- why???
+
+res%prime 
+
+10^9%7
+eg-2^100 -  (axb)%mod a<mod
+            
+>>>fast multiplication
+
+a,b,c > 10^15
+
+res=(a * b)%c
+do it by (a%c x b%c) %c
+a=b=10^15-1
+<<<cant be done by brute force>>>
+
+Matrix Exponentiation>>>
+eg- nth fibonacci number-> 1 1 2 3 5 8 13 21 34 55...
+n<= 10^6 < dynamic programming
+dp[i]=dp[i-1]+dp[i-2] but it is for 10^6 less , fo res
+
+10^18 ......
+
+
+ T          F(N)         F(N+1)
+ _      _   _     _     _           _
+ | 1  1 |   |f(N)  | =  |f(n)+f(n-1) |
+ | 1  0 |   |f(n-1)|    |   f(n)     |
+ -      -   -      -    -            -
+
+ T X F(N)= F(N+1)
+ T X F(3)= F(4)
+ T X F(4)= F(5)
+ T X F(5)= F(6)
+   \   \   \  \  so on
+
+TX(TX(F(3)))=F(5)
+
+THEREFORE,
+
+T^n-2 F(2)=F(N)//
+this is what we will use
+to find T^n-2 by binary Exponentiation
+res - identity Matrix
+ another EXAMPLE-
+ f(n)= a f(n-1)+b f(n-2)+c f(n-3)+d
+   solve thee in SPOJ-
+   SEQ , SPP
+   
+
