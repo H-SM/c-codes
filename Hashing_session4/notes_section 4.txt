@@ -1,0 +1,86 @@
+DS & STL
+
+what is container?
+. obj stores a collection of elements
+. eg- int of arrays, stack , maps, vectors
+. manages str for its elements and provides member functions ffor accessing them(using iterator)
+<<storing data in a place>>
+4 types-
+. sequence container - in a sequence , fixed size ( array, vectors, deque, forward list, list)
+. associative container ( tree and ordered arraingement)- set , map/dict(store collection of key value of something [ like menu to a restaurant]) 
+                          , multiset (stores duplicate as well), multimap ( can have duplicate keys)
+. unordered associative container ( tree and unordered (RANDOM) arraingement)- [like hash table]unordered set, unordered map, unordered multiset , unordered mulitmap
+. container adaptors (provide diffrent interface,has different functionality and traversing)- stack,queue,pri. queue(heap ds)
+
+THE SEQUENCE CONTAINERS
+
+>>Array 
+2 ways-
+. classical way
+. STL way( in c++ 11)
+
+classical WAY
+linear sequence
+>>passed by reference<<, no copy saved or made
+>>actual arrays are updated and changed<<
+>>>size of array cant be find in a function, as it does int* ( address) not actual int object<<<
+arr- 5 x 4 = 20 bytes
+in a function- (ontly has 1st index) 8 bytes [of an address]
+
+STL BASED WAY OF Array
+##ref stlarray.cpp for code##
+doesnt updates like old classical way by calling it to a function
+    as it makes a copy of array and PASS BY VALUE not reference (this copy is called ALIAS )
+    it updates the copy not main array
+if want to change,  PASS BY REF the stl
+##ref stlarray.cpp##
+###OTHER NOTES ARE THERE FOR ARRAY STL(inc fill, sort, for ecah loop)###
+
+>>VECTORS STL
+. dynamic array , change in size unlike array 
+. can resize when element is inserted
+how?- it doubles itself and copy all elements of previous array (when array is full)
+        and original is deleted <<dynamic allocation>>
+IMP FUNCTIONS-
+reserve() - i need at least this many memory
+pop_back()
+push_back(..)
+no front, no space to push in front < without any shifting>
+clear()
+size()
+###OTHER NOTES IN vectors.cpp ONLY###
+
+>>DEQUE 
+doubly ended queue
+expand and contract from both sides
+>>>push_front , pop_back, pop_front, push_back
+ele can be scattered in different chunks of memory locations
+IMP FUNCTIONS-
+[],at()
+back()
+clear()
+front()
+>>>
+size()
+###OTHER NOTES IN deque.cpp ONLY###
+
+>>STACK 
+###NOTES IN stack.cpp ONLY###
+
+>>QUEUE 
+###NOTES IN queue.cpp ONLY###
+
+>>PRIORITY QUEUE  
+###NOTES IN priqueue.cpp ONLY###
+
+>>>HASH table
+data structure in "key-value" pair and supports different knind of operators
+like- insert(pizza , 599),search(dosa),erase(maggi)<<these are the major operaoins of hash table>>
+on an avg done operation in o(1) time....
+if done the same in array or vector, we will have more time complexity 
+<<hash table is very fast>>
+not ordered key-value pairs
+
+an unordered map is a simple hash table
+
+****WE CAN USE LIST TOO IN C++ LIKE IN PYTHON, THEY ARE dynamic****
